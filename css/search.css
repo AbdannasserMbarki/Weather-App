@@ -12,13 +12,26 @@
 }
 body {
   background-color: #B4D6F3;
+  min-height: 100vh;
+  /* Modern gradient overlay for better gif readability */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+  position: relative;
 }
 
 #screen {
-  background-color: #E0EEFA;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
   width: 100%;
-  height: 100vh;
-  position: relative; 
+  min-height: 80vh;
+  margin: 40px auto 0 auto;
+  padding-bottom: 80px;
+  position: relative;
 }
 nav {
   position: fixed;
@@ -32,6 +45,8 @@ nav {
   height: 70px;
   background-color: var(--font-color-main);
   z-index: 100;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -2px 12px 0 rgba(51,36,100,0.10);
 }
 nav ul {
   display: flex;
@@ -62,8 +77,9 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 2px 2px var(--font-color-main);
-  background-color: var(--white-color);
+  box-shadow: 0 2px 8px 0 rgba(51,36,100,0.10);
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #e0eefa;
 }
 .search-icon {
   width: 18px;
@@ -84,6 +100,15 @@ h3 {
   color: var(--font-color-main);
   border: none;
   outline: none;
+}
+.searchinput {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--font-color-main);
 }
 .search input::placeholder {
   color: var(--font-color-main);
@@ -135,7 +160,9 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--font-color-main);
+  background: rgba(51,36,100,0.85);
+  color: #fff;
+  border: none;
 }
 .name {
   padding-left: 40px;
@@ -160,7 +187,8 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.weather-icon img {
+.weather-icon img, .weather-img {
+  filter: drop-shadow(0 2px 8px rgba(51,36,100,0.15));
   width: 100%;
 }
 /*  */
@@ -180,7 +208,8 @@ h3 {
   justify-content: start;
   align-items: center;
   color: var(--white-color);
-  background-color: var(--font-color-main);
+  background: rgba(51,36,100,0.85);
+  border: none;
 }
 
 @media screen and (min-width: 430px) {
@@ -211,4 +240,13 @@ h3 {
     width: 120px;
     height: 120px;
   } 
+}
+
+@media screen and (max-width: 430px) {
+  #screen {
+    border-radius: 0;
+    margin: 0;
+    min-width: unset;
+    box-shadow: none;
+  }
 }

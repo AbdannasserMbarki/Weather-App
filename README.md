@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Weather-App
 Front-End
 =======
@@ -52,7 +52,7 @@ cd weather
 ```javascript
 let apiKey = "Your API Key";
 ``` 
-4. Open `index.html` in your browser to view the project.
+
 
 ### Usage
 
@@ -60,9 +60,7 @@ To use the Weather App, simply enter the name of the city in the search bar and 
 
 ## Contact
 For any inquiries, reach out at [kaushal.r.sahu@outlook.com].<br>
-GitHub: [@kaushalsahu07](https://github.com/kaushalsahu07).<br>
-Linkedin: [@kaushalsahu07](www.linkedin.com/in/kaushalsahu07).<br>
-Instagram: [@cd.kaushal](https://www.instagram.com/cd.kaushal?igsh=cTVram1ia3Vvamxz).<br>
+GitHub: [@kaushalsahu07](https://github.com/AbdannasserMbarki).<br>
+Linkedin: [@kaushalsahu07](https://www.linkedin.com/in/abdannasser-mbarki-499b241ba/).<br>
 Portfolio: [Website Link ](https://kaushalsahu07.github.io/portfolio/).<br>
-X (Tweeter): [@kaushalsahu_07](https://x.com/kaushalsahu_07?t=7nk-jApWrJkgW6YwklJZWQ&s=09).<br>
->>>>>>> 981afdf (first commit)
+
