@@ -60,7 +60,7 @@ To use the Weather App, simply enter the name of the city in the search bar and 
 
 ## Contact
 For any inquiries, reach out at [kaushal.r.sahu@outlook.com].<br>
-GitHub: [@kaushalsahu07](https://github.com/AbdannasserMbarki).<br>
-Linkedin: [@kaushalsahu07](https://www.linkedin.com/in/abdannasser-mbarki-499b241ba/).<br>
+GitHub: [@Abdanasser Mbarki](https://github.com/AbdannasserMbarki).<br>
+Linkedin: [@Abdannasser Mbarki](https://www.linkedin.com/in/abdannasser-mbarki-499b241ba/).<br>
 Portfolio: [Website Link ](https://kaushalsahu07.github.io/portfolio/).<br>
 
