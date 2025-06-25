@@ -1,4 +1,4 @@
-let apiKey = "1e3e8f230b6064d27976e41163a82b77";
+let apiKey = "b66cb5ee41f85cdaa2e46796f71376bc";
 
 navigator.geolocation.getCurrentPosition(async function (position) {
    
@@ -37,6 +37,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
         tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
 
         let weatherCondition = data.list[0].weather[0].main.toLowerCase();
+        let weatherDescription = data.list[0].weather[0].description.toLowerCase(); // For more specific conditions like 'light rain'
 
         if (weatherCondition === "rain") {
             weatherImg.src = "img/rain.png";
@@ -50,15 +51,71 @@ navigator.geolocation.getCurrentPosition(async function (position) {
         } else if (weatherCondition === "clouds" || weatherCondition === "smoke") {
             weatherImg.src = "img/cloud.png";
             weatherImgs.src = "img/cloud.png";
-        } else if (weatherCondition === "mist" || weatherCondition === "Fog") {
+        } else if (weatherCondition === "mist" || weatherCondition === "fog") { // Corrected "Fog" to "fog" for consistency
             weatherImg.src = "img/mist.png";
             weatherImgs.src = "img/mist.png";
         } else if (weatherCondition === "haze") {
             weatherImg.src = "img/haze.png";
             weatherImgs.src = "img/haze.png";
-        } else if (data.weather[0].main === "Thunderstorm") {
+        } else if (weatherCondition === "thunderstorm") { // Corrected from data.weather[0].main
             weatherImg.src = "img/thunderstorm.png";
             weatherImgs.src = "img/thunderstorm.png";
+        } else if (weatherCondition === "drizzle") {
+            weatherImg.src = "img/rain.png"; // Using rain icon for drizzle
+            weatherImgs.src = "img/rain.png";
+        }
+
+
+        // Update background based on weather condition
+        const screenElement = document.getElementById("screen");
+        let backgroundGif = "";
+
+        switch (weatherCondition) {
+            case "thunderstorm":
+                backgroundGif = "img/storm-background.gif";
+                break;
+            case "drizzle":
+            case "rain":
+                if (weatherDescription.includes("light") || weatherDescription.includes("moderate")) {
+                    backgroundGif = "img/rain-background.gif";
+                } else if (weatherDescription.includes("heavy") || weatherDescription.includes("extreme") || weatherDescription.includes("very heavy")) {
+                    backgroundGif = "img/heavy-rain-background.gif";
+                } else {
+                    backgroundGif = "img/rain-background.gif"; // Default rain
+                }
+                break;
+            case "snow":
+                if (weatherDescription.includes("light")) {
+                    backgroundGif = "img/light-snow-background.gif";
+                } else if (weatherDescription.includes("heavy")) {
+                    backgroundGif = "img/heavy-snow-background.gif";
+                } else {
+                    backgroundGif = "img/light-snow-background.gif"; // Default snow
+                }
+                break;
+            case "clear":
+                backgroundGif = "img/sunny-background.gif";
+                break;
+            case "clouds":
+                backgroundGif = "img/cloudy-background.gif";
+                break;
+            case "mist":
+            case "smoke":
+            case "haze":
+            case "fog":
+            case "sand":
+            case "dust":
+            case "ash":
+            case "squall":
+            case "tornado": // Though no specific tornado gif, can default or use a stormy one
+                backgroundGif = "img/windy-background.gif"; // Using windy for these atmospheric conditions
+                break;
+            default:
+                backgroundGif = "img/sunny-background.gif"; // Default background
+        }
+
+        if (backgroundGif) {
+            screenElement.style.backgroundImage = `url('${backgroundGif}')`;
         }
 
         // Fetch and display 5-day forecast data
