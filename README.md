@@ -44,9 +44,5 @@ let apiKey = "Your API Key";
 
 To use the Weather App, simply enter the name of the city in the search bar and press enter. The app will display the current weather conditions, including temperature, humidity, wind speed, and more.
 
-## Contact
-For any inquiries, reach out at [abdannassermbarki@gmail.com].<br>
-GitHub: [Abdanasser Mbarki](https://github.com/AbdannasserMbarki).<br>
-Linkedin: [Abdannasser Mbarki](https://www.linkedin.com/in/abdannasser-mbarki-499b241ba/).<br>
-Portfolio: [Website Link ](https://kaushalsahu07.github.io/portfolio/).<br>
+>
 
